@@ -43,7 +43,7 @@
 ## Break gradient accumulation on purpose
 
 
-![gradient accumulation ](results/task3_accumulation_bug.png)
+![gradient accumulation ](task3_accumulation_bug.png)
 
 | | final-step divergence |
 |---|---|
@@ -58,7 +58,7 @@ A grad norm that *leads* the loss is a symptom of the weights going unstable, so
 creates that condition: start from the checkpoint and ramp
 the learning rate exponentially 3e-4 → 3e-2 over 200 steps, no clipping, logging every step.
 
-![grad norm and loss under an lr ramp](results/task4_grad_norm_vs_loss.png)
+![grad norm and loss under an lr ramp](task4_grad_norm_vs_loss.png)
 
 Each step is z-scored against the trailing 20 steps (the loss drifts upward as lr rises, so
 a fixed baseline would flag drift, not a spike). Window: steps 75–94.
